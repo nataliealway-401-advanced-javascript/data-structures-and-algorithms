@@ -9,8 +9,8 @@ First we want to get the mid point of the array and compare find if the value(ke
 
 
 ## Links and Resources
-[Pull Request]() <br>
-[Travis]()
+[Pull Request](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/1) <br>
+[Travis](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms)
 
 ## Solution
 ![whiteboard](../assets/arrayBinarySearch2.jpg)
