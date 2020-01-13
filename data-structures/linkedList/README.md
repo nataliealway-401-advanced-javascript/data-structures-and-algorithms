@@ -20,6 +20,6 @@ Write tests to prove the following functionality:
 
 ## Links and Resources
 [Pull Request](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/2) <br>
-[Travis](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms)
+[Travis](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms) <br>
 [Jsdocs] Clone repo -> CD to docs -> live-server
 
