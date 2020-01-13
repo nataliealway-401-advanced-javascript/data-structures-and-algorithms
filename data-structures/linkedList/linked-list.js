@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * @class
+ * @class Node
  */
 
 class Node {
@@ -12,14 +12,18 @@ class Node {
 }
 
 /**
- * @class
+ * @class LinkedList
  */
 class LinkedList {
   constructor() {
     this.head = null;
   }
 
-
+  /**
+ *  Creates new node then inserts in into the linked list
+ * @param {*} value 
+ * @memberof LinkedList
+ */
   insert(value) {
     let inserted = new Node(value);
     inserted.next = this.head;
@@ -27,7 +31,11 @@ class LinkedList {
     return this.head;
   }
 
-
+  /**
+ *  Takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list
+ * @param {*} value 
+ * @memberof LinkedList
+ */
   includes(value) {
     let currentNode = this.head;
     while(currentNode){
@@ -40,7 +48,11 @@ class LinkedList {
   }
 
 
-
+  /**
+   * returns a string representing all the values in the Linked List,
+   * in format "{ a } -> { b } -> { c } -> NULL"
+   * @memberof Linkedlist
+   */
   toString() {
     let currentNode = this.head;
     let string = 'head';
