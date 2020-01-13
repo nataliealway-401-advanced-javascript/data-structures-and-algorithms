@@ -1,4 +1,4 @@
-# Linked Lista
+# Linked Lists
 Create a linked list, search to see if a specific value is present, and return a string of all values in the list.
 
 
