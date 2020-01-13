@@ -41,11 +41,11 @@ class LinkedList {
 
 
 
- toString() {
+  toString() {
     let currentNode = this.head;
-    let string = '';
-    while (current !==null) {
-      string = `${string} -> {${currentNode.value}}`;
+    let string = 'head';
+    while (currentNode !==null) {
+      string = `${string} -> ${currentNode.value}`;
       currentNode = currentNode.next;
     }
     return `${string} -> NULL`;
