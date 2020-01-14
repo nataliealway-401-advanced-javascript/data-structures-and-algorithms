@@ -126,7 +126,10 @@ class LinkedList {
   } 
 
   // ~~~~~~~~~~~~~~~~~~~~~~~ KTH FROM THE END ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+  /**
+   *  Returns the value of node kth from the end of a linked list
+   * @param  {} k
+   */
   kthFromTheEnd(k){
     let currentNode = this.head;
     const values = [];
