@@ -36,48 +36,47 @@ class LinkedList {
  * @param {*} data 
  */
   append(value){
-    let appendedItem = new Node(value);
+    let newNode = new Node(value);
     let currentNode = this.head;
     if(this.head === null){
-      this.head = appendedItem;
+      this.head = newNode;
       return this.head;
     } else {
       while(currentNode.next){
         currentNode = currentNode.next;
       }
-      currentNode.next = appendedItem;
+      currentNode.next = newNode;
     }
   }
   //add a new node with the given newValue immediately before the first value node
   insertBefore(value, newValue){
-    let insertedItem = new Node(value);
+    let newNode = new Node(newValue);
     let currentNode = this.head;
-    if(currentNode.data === newValue){
-      this.insert(value);
-      return;
+
+    if(currentNode.value === value) {
+      newNode.next = this.head;
+      this.head = newNode;
+    } else {
+      while (currentNode.next.value !== value) {
+        currentNode = currentNode.next;
+      } 
     }
-    while(currentNode.next){
-      if(currentNode.next.value === newValue){
-        insertedItem.next = currentNode.next;
-        currentNode.next = insertedItem;
-        return;
-      }
-      currentNode = currentNode.next;
-    }
+    newNode.next = currentNode.next;
+    currentNode.next = newNode;
   }
 
+
+
+
   insertAfter(value, newValue){
-    let insertedItem = new Node(value);
+    let newNode = new Node(newValue);
     let currentNode = this.head;
 
-    while(currentNode){
-      if(currentNode.value === newValue){
-        insertedItem.next = currentNode.next;
-        currentNode.next = insertedItem;
-      }
+    while (currentNode.value !== value) {
       currentNode = currentNode.next;
     }
-
+    newNode.next = currentNode.next;
+    currentNode.next = newNode;
 
   }
 
