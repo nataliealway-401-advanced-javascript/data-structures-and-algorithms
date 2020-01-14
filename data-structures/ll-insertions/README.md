@@ -13,9 +13,9 @@
 O(n) - We dont go deeper then one iteration of the list
 
 ## Links and Resources
-[Pull Request]() <br>
-[Travis]() <br>
-[Jsdocs]()
+[Pull Request](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/4) <br>
+[Travis](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms) <br>
+[Jsdocs](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/tree/master/docs)
 
 ## Solution
 ![Whiteboard](../assets/llinsertionWB1.jpg)
