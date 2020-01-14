@@ -16,3 +16,9 @@ O(n) - We dont go deeper then one iteration of the list
 [Pull Request]() <br>
 [Travis]() <br>
 [Jsdocs]()
+
+## Solution
+![Whiteboard](../assets/llinsertionWB1.jpg)
+![Whiteboard](../assets/llinsertionWB2.jpg)
+![Whiteboard](../assets/llinsertionWB3.jpg)
+![Whiteboard](../assets/llinsertionWB4.jpg)
