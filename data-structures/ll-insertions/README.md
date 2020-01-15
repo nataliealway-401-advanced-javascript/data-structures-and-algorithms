@@ -13,6 +13,12 @@
 O(n) - We dont go deeper then one iteration of the list
 
 ## Links and Resources
-[Pull Request](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/3) <br>
+[Pull Request](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/4) <br>
 [Travis](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms) <br>
-[Jsdocs](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/tree/ll-insertions/docs)
+[Jsdocs](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/tree/master/docs)
+
+## Solution
+![Whiteboard](../assets/llinsertionWB1.jpg)
+![Whiteboard](../assets/llinsertionWB2.jpg)
+![Whiteboard](../assets/llinsertionWB3.jpg)
+![Whiteboard](../assets/llinsertionWB4.jpg)
