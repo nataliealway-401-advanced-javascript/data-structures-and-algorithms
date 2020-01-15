@@ -147,6 +147,11 @@ class LinkedList {
 
 // ~~~~~~~~~~~~~~~~~~~~~~~ LINKED LISTS MERGED ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+/**
+ * Merges two linked lists into one list
+ * @param {*} list1 
+ * @param {*} list2 
+ */
 function mergeLists(list1, list2) {
   const merged = new LinkedList();
   let node1 = list1.head;
