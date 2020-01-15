@@ -11,9 +11,9 @@ Created a method that finds the end of the link list, then counts backwards towa
 * BigO -> O(n)
 
 ## Links and Resources
-[Pull Request]() <br>
-[Travis]() <br>
-[Jsdocs]()
+[Pull Request](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/5) <br>
+[Travis](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms) <br>
+[Jsdocs](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/tree/ll-kth-from-end/docs)
 
 ## Solution
 ![whiteboard](../assets/kthFromEndWB.jpg)
