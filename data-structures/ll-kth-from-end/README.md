@@ -16,5 +16,5 @@ Created a method that finds the end of the link list, then counts backwards towa
 [Jsdocs](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/tree/ll-kth-from-end/docs)
 
 ## Solution
-![whiteboard](../assets/kthFromEndWB.jpg)
+![whiteboard](../assets/llmergeWB.jpg)
 
