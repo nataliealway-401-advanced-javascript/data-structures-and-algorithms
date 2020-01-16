@@ -1,4 +1,4 @@
-# Linked Lists - Kth From The End
+# Linked Lists - Merge 
 Merge two linked lists into one
 
 
@@ -10,9 +10,9 @@ First we created if statements to rule out our edge cases. Then we created a met
 
 
 ## Links and Resources
-[Pull Request](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/5) <br>
+[Pull Request](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/6) <br>
 [Travis](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms) <br>
-[Jsdocs](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/tree/ll-kth-from-end/docs)
+[Jsdocs](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/tree/ll-merge/docs)
 
 ## Solution
 ![whiteboard](../assets/llmergeWB.jpg)
