@@ -1,4 +1,8 @@
-
+/**
+ * Function that takes a value and inserts it into the center of an array
+ * @param  {} arr
+ * @param  {} value
+ */
 function shiftArray(arr,value) {
   let newArray = [];
   let middle = arr.length/2;

@@ -9,8 +9,9 @@ Declare a function that accepts an array and a value. Within that function decla
 
 
 ## Links and Resources
-[Pull Request]()
-[Travis]()
+[Pull Request](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/7) <br>
+[Travis](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms) <br>
+[JsDocs](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/tree/arrayShift/docs)
 
 ## Solution
 ![whiteboard](../assets/challenge02-arrayshift.jpg)
