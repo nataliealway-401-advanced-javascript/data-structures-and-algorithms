@@ -142,8 +142,48 @@ class LinkedList {
     let index = (values.length - k ) -1;
     return values[index];
   }
+
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~ LINKED LISTS MERGED ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/**
+ * Merges two linked lists into one list
+ * @param {*} list1 
+ * @param {*} list2 
+ */
+function mergeLists(list1, list2) {
+  const merged = new LinkedList();
+  let node1 = list1.head;
+  let node2 = list2.head;
+
+  if (node1 === null && node2 === null) return 'Error';
+  if (node1 === null) return list2;
+  if (node2 === null) return list1;
+
+  while (node1 !== null && node2 !== null) {
+    merged.insert(node1.value);
+    merged.insert(node2.value);
+    node1 = node1.next;
+    node2 = node2.next;
+  }
+
+  if (node1 === null && node2 === null) return merged;
+  if (node1 === null) {
+    while (node2 !== null) {
+      merged.insert(node2.value);
+      node2 = node2.next;
+    }
+  }
+  if (node2 === null) {
+    while (node1 !== null) {
+      merged.insert(node1.value);
+      node1 = node1.next;
+    }
+  }
+  return merged;
 }
 
 
-module.exports = LinkedList;
 
+module.exports = { LinkedList, mergeLists };

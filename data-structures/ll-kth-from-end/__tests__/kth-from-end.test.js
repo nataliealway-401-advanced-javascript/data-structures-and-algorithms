@@ -3,7 +3,7 @@
 const LinkedList = require('../../linkedList/linked-list');
 
 describe('Testing Kth from the end of a linked list,', () => {
-  const list = new LinkedList();
+  const list = new LinkedList.LinkedList();
 
   list.insert('1');
   list.insert('2');
@@ -24,7 +24,7 @@ describe('Testing Kth from the end of a linked list,', () => {
     expect(list.kthFromTheEnd('-4')).toBe('Exception');
   });
 
-  const singleList = new LinkedList();
+  const singleList = new LinkedList.LinkedList();
   singleList.insert = ('1');
 
   it('Should return an exception when the linked list contains one and k is 0', () => {
