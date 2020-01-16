@@ -4,7 +4,7 @@ const LinkedList = require('../linked-list.js');
 
 // * Can successfully instantiate an empty linked list
 describe('instantiate an empty linked list', ()=>{
-  let list = new LinkedList();
+  let list = new LinkedList.LinkedList();
   it('empty list',() => {
     expect(list).toBeTruthy();
   });
@@ -13,7 +13,7 @@ describe('instantiate an empty linked list', ()=>{
 
 // * Can properly insert into the linked list
 describe('insert into the linked list', ()=>{
-  let list = new LinkedList();
+  let list = new LinkedList.LinkedList();
   list.insert('yellow');
 
   it('successfully inserts into list', ()=>{
@@ -24,7 +24,7 @@ describe('insert into the linked list', ()=>{
 
 //*The head property will properly point to the first node in the linked list
 describe('head property will properly point to the first node in the linked list', () => {
-  let list = new LinkedList();
+  let list = new LinkedList.LinkedList();
   list.insert('Natalie');
   list.insert('Aaron');
 
@@ -35,7 +35,7 @@ describe('head property will properly point to the first node in the linked list
 
 //* Can properly insert multiple nodes into the linked list
 describe('Can properly insert multiple nodes into the linked list', () => {
-  let list = new LinkedList();
+  let list = new LinkedList.LinkedList();
   list.insert('Natalie');
   list.insert('Aaron');
 
@@ -49,7 +49,7 @@ describe('Can properly insert multiple nodes into the linked list', () => {
 
 // Will return true when finding a value within the linked list that exists
 describe('Will return true when finding a value within the linked list that exists', () => {
-  let list = new LinkedList();
+  let list = new LinkedList.LinkedList();
   list.insert('Natalie');
   list.insert('Aaron');
   let searchResult = list.includes('Natalie');
@@ -67,7 +67,7 @@ describe('Will return true when finding a value within the linked list that exis
 
 // * Can properly return a collection of all the values that exist in the linked list
 describe('Can properly return a collection of all the values that exist in the linked list', ()=>{
-  let list = new LinkedList();
+  let list = new LinkedList.LinkedList();
   list.insert('item1');
   list.insert('item2');
   list.insert('item3');
@@ -83,7 +83,7 @@ describe('Can properly return a collection of all the values that exist in the l
 // ____________________ LL-INSERTIONS TESTS _______________________________
  
 describe('Can successfully add a node to the end of the linked list', () => {
-  let list = new LinkedList();
+  let list = new LinkedList.LinkedList();
   list.insert('1');
   list.append('2');
   it('should add items to the end of the list', () => {
@@ -91,7 +91,7 @@ describe('Can successfully add a node to the end of the linked list', () => {
   });
 
   describe('Can succesfully add multiple nodes to the end of a list', () => {
-    let list = new LinkedList();
+    let list = new LinkedList.LinkedList();
     list.insert('1');
     list.append('2');
     list.append('5');
@@ -102,7 +102,7 @@ describe('Can successfully add a node to the end of the linked list', () => {
 });
 
 describe('Can successfully insert a node before a node located i the middle of a linked list', () => {
-  let list = new LinkedList();
+  let list = new LinkedList.LinkedList();
   list.insert('red');
   list.insert('yellow');
   list.insert('purple');
@@ -115,7 +115,7 @@ describe('Can successfully insert a node before a node located i the middle of a
 
 describe('Can successfully insert a node before the first node in the list', () => { 
   it('inserts a node before the first node in the list', () => {
-    let list = new LinkedList();
+    let list = new LinkedList.LinkedList();
     list.insert('strawberry');
     list.insert('blueberry');
     list.insert('banana');
@@ -125,7 +125,7 @@ describe('Can successfully insert a node before the first node in the list', () 
   
   describe('Can successfully insert a node in the middle of the linked list', () => { 
     it('inserts a node in the middle of the linked list', () => {
-      let list = new LinkedList();
+      let list = new LinkedList.LinkedList();
       list.insert('steak');
       list.insert('chicken');
       list.insert('fish');
@@ -138,7 +138,7 @@ describe('Can successfully insert a node before the first node in the list', () 
 
   describe('Can successfully insert a node after the last node in the list', () => { 
     it('Can successfully insert a node after the last node in the list', () => {
-      let list = new LinkedList();
+      let list = new LinkedList.LinkedList();
       list.insert('californiaRoll');
       list.insert('unagi');
       list.insert('spicyTuna');
