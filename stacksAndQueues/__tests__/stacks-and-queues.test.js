@@ -32,14 +32,40 @@ describe('Stack testing', () => {
     stack.push(1);
     expect(stack.top.value).toBe(1);
   });
-
-  it('Can successfully instantiate an empty stack', () => {
-    expect(stack.isEmpty()).toEqual(null);
-  });
-
-
 });
 
+// QUEUES TESTING
+
+describe('Queue testing', () => {
+  it('Can successfully enqueue into a queue', () => {
+    queue.enqueue('a');
+    expect(queue.front.value).toBe('a');
+  });
+  it('Can successfully enqueue multiple values into a queue', () => {
+    queue.enqueue('b');
+    queue.enqueue('c');
+    queue.enqueue('d');
+    expect(queue.rear.value).toBe('d');
+  });
+  it('Can successfully dequeue out of a queue the expected value', () => {
+    let removed = queue.dequeue();
+    expect(removed.value).toBe('a');
+  });
+  it('Can successfully peek into a queue, seeing the expected value', () => {
+    let peek = queue.peek();
+    expect(peek.value).toBe('b');
+  });
+  it('Can successfully empty a queue after multiple dequeues', () => {
+    queue.dequeue();
+    queue.dequeue();
+    queue.dequeue();
+    let peek = queue.peek();
+    expect(peek).toBe(null);
+    expect(queue.front).toBe(null);
+    expect(queue.rear).toBe(null);
+  });
+});
+  
 
 
 
