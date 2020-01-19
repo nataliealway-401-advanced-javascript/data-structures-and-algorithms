@@ -13,9 +13,9 @@ Implement a Stack and a Queue Data Structure
 *BigO -> O(n)
 
 ## Links and Resources
-[Pull Request]() <br>
-[Travis]() <br>
-[Jsdocs]()
+[Pull Request](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/9) <br>
+[Travis](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms) <br>
+[Jsdocs](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/blob/stack-and-queue/docs/stacksAndQueues_stacks-and-queues.js.html)
 
 ## Solution
 ![whiteboard](./assets/stacksnqueues1.jpg)
