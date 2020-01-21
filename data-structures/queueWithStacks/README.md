@@ -14,9 +14,9 @@ First we brought in the Stack methods and used those within the new PseudoQueue 
 * BigO -> O(n)
 
 ## Links and Resources
-[Pull Request]() <br>
-[Travis]() <br>
-[Jsdocs]()
+[Pull Request](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/10) <br>
+[Travis](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms) <br>
+[Jsdocs](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/blob/queue-with-stacks/docs/data-structures_queueWithStacks_queue-with-stacks.js.html)
 
 ## Solution
 ![whiteboard](../assets/queues-with-stacksWB.jpeg)
