@@ -17,7 +17,7 @@ class PseudoQueue {
       if(this.stack2.length === 0)
         return 'Queue empty';
     }
-    while(this.stack1.length !== null){
+    while(this.stack1.top !== null){
       let p = this.stack1.pop();
       this.stack2.push(p);
     } 

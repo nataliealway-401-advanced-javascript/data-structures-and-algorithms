@@ -37,10 +37,12 @@ class Stack {
    * @returns value
    */
   pop(){
-    this.temp = this.top;
-    this.top = this.temp.next;
-    return this.temp.value;
-  }
+    let temp = this.top;
+    this.top = this.temp;
+    this.top = this.top.next;
+    temp.next = null;
+    return temp;
+  } 
 
   /**
    * Checks the value of the node on top of the stack
