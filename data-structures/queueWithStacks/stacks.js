@@ -37,11 +37,13 @@ class Stack {
    * @returns value
    */
   pop(){
-    let temp = this.top;
-    this.top = this.temp;
-    this.top = this.top.next;
-    temp.next = null;
-    return temp;
+    if(this.top !== null){
+      this.temp = this.top;
+      this.top = this.temp.next;
+      return this.temp.data;
+    } else {
+      return 'null';
+    }
   } 
 
   /**

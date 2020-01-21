@@ -17,9 +17,13 @@ describe('Queue with stacks testing', () => {
     expect(queue.stack1.top.next.value).toBe('b');
   });
 
-  it('Can succesfully dequeue a value out of a queue ', () => {
-    let queue = new PseudoQueue();
-    expect(queue.dequeue()).toBe('b');
+  it.skip('Can succesfully dequeue a value out of a queue ', () => {
+    const queue = new PseudoQueue();
+    queue.enqueue('a');
+    queue.enqueue('b');
+    queue.enqueue('c');
+    queue.dequeue();
+    expect(queue.stack2.top).toBe('a');
   });
 
 });
