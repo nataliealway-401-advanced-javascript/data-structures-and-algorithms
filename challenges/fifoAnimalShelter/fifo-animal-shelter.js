@@ -25,6 +25,8 @@ class AnimalShelter {
    * @param  {} pref
    * @returns value of prefrence type
    */
+
+  // Credit to Travis Skyles
   dequeue(pref){
     if(pref !== 'dog' || pref !== 'cat'){
       return null;
