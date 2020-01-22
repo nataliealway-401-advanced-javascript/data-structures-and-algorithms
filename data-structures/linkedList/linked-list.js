@@ -23,6 +23,7 @@ class LinkedList {
  *  Creates new node then inserts in into the linked list
  * @param {*} value 
  * @memberof LinkedList
+ * @returns value
  */
   insert(value) {
     let inserted = new Node(value);
@@ -35,6 +36,7 @@ class LinkedList {
  *  Takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list
  * @param {*} value 
  * @memberof LinkedList 
+ * @returns boolean
  */
   includes(value) {
     let currentNode = this.head;
@@ -52,6 +54,7 @@ class LinkedList {
    * returns a string representing all the values in the Linked List,
    * in format "{ a } -> { b } -> { c } -> NULL"
    * @memberof Linkedlist
+   * @returns string
    */
   toString() {
     let currentNode = this.head;
@@ -70,6 +73,7 @@ class LinkedList {
   /**
  * adds a new node with the given value to the end of the list
  * @param {*} value
+ * @returns value
  */
   append(value){
     let newNode = new Node(value);
@@ -89,6 +93,7 @@ class LinkedList {
 * add a new node with the given newValue immediately before the first value node
 * @param value
 * @param newValue
+* @returns value, newValue(newNode)
 */
   insertBefore(value, newValue){
     let newNode = new Node(newValue);
@@ -111,6 +116,7 @@ class LinkedList {
 * Inserts a new value after the value in the list
 * @param value
 * @param newValue
+* @returns value
 */
 
   insertAfter(value, newValue){
@@ -129,6 +135,7 @@ class LinkedList {
   /**
    *  Returns the value of node kth from the end of a linked list
    * @param  {} k
+   * @returns value[index]
    */
   kthFromTheEnd(k){
     let currentNode = this.head;
@@ -151,6 +158,7 @@ class LinkedList {
  * Merges two linked lists into one list
  * @param {*} list1 
  * @param {*} list2 
+ * @returns merged lists
  */
 function mergeLists(list1, list2) {
   const merged = new LinkedList();
