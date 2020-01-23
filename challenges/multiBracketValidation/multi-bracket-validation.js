@@ -1,30 +1,35 @@
 'use strict';
 
-let matchingBrackets = function (str) {
-  let stack = [];
+let Stack = require('../../data-structures/queueWithStacks/stacks.js');
+
+function multiBracketValidation(string) {
+  let stack = new Stack;
   let brackets = {
     '(': ')',
     '[': ']',
     '{': '}',
   };
+  if(typeof string !== 'string'){
+    return undefined;
+  }
 
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === '(' || str[i] === '{' || str[i] === '[' ) {
-      stack.push(str[i]);
-    }
-    else {
+  for(let i = 0; i < string.length; i++){
+    let char = string.charAt(i);
+    if (brackets[char]){
+      stack.push(brackets[char]);
+    } else {
       let last = stack.pop();
-      if (str[i] !== brackets[last]) {
+      if (string[char] !== brackets[last]) {
         return false;
       }
     }
   }
-  if (stack.length !== 0) {
+  if (stack.isEmpty()) {
+    return true;
+  } else {
     return false;
   }
-
-  return true;
-};
+}
 
 
-module.exports = matchingBrackets();
+module.exports = multiBracketValidation;
