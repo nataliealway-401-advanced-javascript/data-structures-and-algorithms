@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: challenges/02-ArrayShift/array-shift.js</title>
+    <title>JSDoc: Source: challenges/multiBracketValidation/multi-bracket-validation.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: challenges/02-ArrayShift/array-shift.js</h1>
+    <h1 class="page-title">Source: challenges/multiBracketValidation/multi-bracket-validation.js</h1>
 
     
 
@@ -26,32 +26,47 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * Function that takes a value and inserts it into the center of an array
- * @param  {} arr
- * @param  {} value
+            <pre class="prettyprint source linenums"><code>'use strict';
+
+let Stack = require('../../data-structures/queueWithStacks/stacks.js');
+
+/**
+ * multiBracketValidation
+ * @function 
+ * @param {string} string 
+ * @returns {boolean} 
  */
-function shiftArray(arr,value) {
-  let newArray = [];
-  let middle = arr.length/2;
-  let counter = 0;
-   
-  if (arr.length % 2 === 1) {
-    middle += .5;
+function multiBracketValidation(string) {
+  let stack = new Stack;
+  let brackets = {
+    '(': ')',
+    '[': ']',
+    '{': '}',
+  };
+  if(typeof string !== 'string'){
+    return undefined;
   }
-   
-  for (let i = 0; i &lt;= arr.length; i++) {
-    if (i !== middle) {
-      newArray[i] = arr[ i + counter];
+
+  for(let i = 0; i &lt; string.length; i++){
+    let char = string.charAt(i);
+    if (brackets[char]){
+      stack.push(brackets[char]);
     } else {
-      newArray[i] = value;
-      counter--;
+      let last = stack.pop();
+      if (string[char] !== brackets[last]) {
+        return false;
+      }
     }
   }
-  return newArray;
+  if (stack.isEmpty()) {
+    return true;
+  } else {
+    return false;
+  }
 }
-  
-module.exports = shiftArray;</code></pre>
+
+
+module.exports = multiBracketValidation;</code></pre>
         </article>
     </section>
 
