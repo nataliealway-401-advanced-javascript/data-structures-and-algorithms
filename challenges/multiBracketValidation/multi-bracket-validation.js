@@ -2,6 +2,12 @@
 
 let Stack = require('../../data-structures/queueWithStacks/stacks.js');
 
+/**
+ * multiBracketValidation
+ * @function 
+ * @param {string} string 
+ * @returns {boolean} 
+ */
 function multiBracketValidation(string) {
   let stack = new Stack;
   let brackets = {
