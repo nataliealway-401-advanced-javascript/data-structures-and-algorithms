@@ -10,9 +10,9 @@ Create a method that takes in a string as its only argument, and should return a
 
 
 ## Links and Resources
-[Pull Request]() <br>
+[Pull Request](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/13) <br>
 [Travis](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms) <br>
-[Jsdocs]()
+[Jsdocs](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/blob/multi-bracket-validation/docs/challenges_multiBracketValidation_multi-bracket-validation.js.html)
 
 ## Solution
 ![whiteboard](../assets/multiBracketWB.jpeg)
