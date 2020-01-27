@@ -15,3 +15,6 @@
 [Travis]() <br>
 [Jsdocs]()
 
+## Solution
+![whiteboard](imgling)
+

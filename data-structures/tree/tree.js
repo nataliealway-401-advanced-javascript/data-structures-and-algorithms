@@ -1,5 +1,8 @@
 'use strict';
-
+/**
+ * class Node
+ * @class
+ */
 class Node {
   constructor(value){
     this.value = value;
@@ -7,34 +10,55 @@ class Node {
     this.right =  null;
   }
 }
-
+/**
+ * Binary Tree
+ * @class
+ */
 class BinaryTree {
   constructor(root){
     this.root = new Node(root);
   }
-  //Preorder prints(logs) root<-left<-right 
+  
+  /**
+   * Preorder prints(logs) root<-left<-right 
+   * @param  {} print
+   */
   preOrder(print){
-    print(this.value);
+    console.log(this.value);
     if (this.left) this.left.preOrder(print);
     if (this.right) this.right.preOrder(print);
   }
   
-  //inOrder prints(logs) left<-root<-right
+  /**
+   * Postorder prints(logs) left<-right<-root 
+   * @param  {} print
+   */
+
   postOrder(print) {
     if (this.left) this.left.postOrder(print);
     if (this.right) this.right.postOrder(print);
-    print(this.value);
+    console.log(this.value);
   }
   
-  //Postorder prints(logs) left<-right<-root
+  
+  /**
+   * inOrder prints(logs) left<-root<-right
+   * @param  {} print
+   */
   inOrder(print) {
     if (this.left) this.left.inOrder(print);
-    print(this.value);
+    console.log(this.value);
     if (this.right) this.right.inOrder(print); 
   }
 }
 
 class BinarySearchTree extends BinaryTree {
+  
+  /**
+   * Add traverses the tree and adds a node based on if it's value
+   * @function add
+   * @param {*} value 
+   */
   add(value) {
     let root = this.root;
     
@@ -68,6 +92,11 @@ class BinarySearchTree extends BinaryTree {
     }
   }
     
+  /**
+   * Contains checks the tree for a value and returns a Boolean
+   * @function contains
+   * @param {*} value 
+   */
   contains(value) {
     let currentNode = this.root;
     
