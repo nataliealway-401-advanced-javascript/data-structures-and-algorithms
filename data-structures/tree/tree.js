@@ -58,7 +58,7 @@ class BinaryTree {
     };
     traverse(this.root);
     return result;
-   }
+  }
   
   
   
