@@ -4,12 +4,14 @@
  * @class
  */
 class Node {
-  constructor(value){
+  constructor(value) {
     this.value = value;
     this.left = null;
-    this.right =  null;
+    this.right = null;
   }
 }
+
+module.exports = Node;
 /**
  * Binary Tree
  * @class
@@ -23,10 +25,19 @@ class BinaryTree {
    * Preorder prints(logs) root<-left<-right 
    * @param  {} print
    */
-  preOrder(print){
-    console.log(this.value);
-    if (this.left) this.left.preOrder(print);
-    if (this.right) this.right.preOrder(print);
+  preOrder(){
+    let result = [];
+    const traverse = node => {
+      result.push(node.value);
+      if(node.left){
+        traverse(node.left);
+      }
+      if(node.right){
+        traverse(node.right);
+      }
+    };
+    traverse(this.root);
+    return result;
   }
   
   /**
@@ -34,11 +45,21 @@ class BinaryTree {
    * @param  {} print
    */
 
-  postOrder(print) {
-    if (this.left) this.left.postOrder(print);
-    if (this.right) this.right.postOrder(print);
-    console.log(this.value);
-  }
+  postOrder() {
+    let result = [];
+    const traverse = node => {
+      if(node.left){
+        traverse(node.left);
+      }
+      if(node.right){
+        traverse(node.right);
+      }
+      result.push(node.value);
+    };
+    traverse(this.root);
+    return result;
+   }
+  
   
   
   /**
@@ -46,11 +67,22 @@ class BinaryTree {
    * @param  {} print
    */
   inOrder(print) {
-    if (this.left) this.left.inOrder(print);
-    console.log(this.value);
-    if (this.right) this.right.inOrder(print); 
+    let result = [];
+    const traverse = node => {
+      if(node.left){
+        traverse(node.left);
+      }
+      result.push(node.value);
+      if(node.right){
+        traverse(node.right);
+      }
+    };
+    traverse(this.root);
+    return result;
   }
 }
+  
+
 
 class BinarySearchTree extends BinaryTree {
   
