@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: challenges/fizzBuzzTree/fizzBuzzTree.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,54 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: challenges/fizzBuzzTree/fizzBuzzTree.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
 
 
-    <h3> </h3>
+/**
+ * @function FizzOrBuzz
+ * @param {*} value
+ * @returns string
+ */
+function fizzOrBuzz(value) {
+  if (value % 3 === 0 &amp;&amp; value % 5 === 0) {
+    return 'FizzBuzz';
+  } else if (value % 5 === 0) {
+    return 'Buzz';
+  } else if (value % 3 === 0) {
+    return 'Fizz';
+  } 
+}
+/** 
+ * @function fizzBuzzTree
+ * @param {*} tree 
+ * @returns tree
+ */
+function fizzBuzzTree(tree) {
+  if (!tree) {
+    return 'No tree value';
+  }
+  let recursive = node => {
+    if (node.left) recursive(node.left);
+    node.value = fizzOrBuzz(node.value);
+    if (node.right) recursive(node.right);
+  };
+  recursive(tree.tree.root);
+  return tree;
+}
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+module.exports = fizzBuzzTree;
+</code></pre>
+        </article>
+    </section>
 
 
 
