@@ -2,20 +2,21 @@
 
 
 /**
- * 
- * @param {*} val 
+ * @function FizzOrBuzz
+ * @param {*} value
  * @returns string
  */
-function fizzBuzzNode(val) {
-  if (val % 3 === 0 && val % 5 === 0) {
+function fizzOrBuzz(value) {
+  if (value % 3 === 0 && value % 5 === 0) {
     return 'FizzBuzz';
-  } else if (val % 5 === 0) {
+  } else if (value % 5 === 0) {
     return 'Buzz';
-  } else if (val % 3 === 0) {
+  } else if (value % 3 === 0) {
     return 'Fizz';
   } 
 }
 /** 
+ * @function fizzBuzzTree
  * @param {*} tree 
  * @returns tree
  */
@@ -25,7 +26,7 @@ function fizzBuzzTree(tree) {
   }
   let recursive = node => {
     if (node.left) recursive(node.left);
-    node.val = fizzBuzzNode(node.val);
+    node.value = fizzOrBuzz(node.value);
     if (node.right) recursive(node.right);
   };
   recursive(tree.tree.root);
