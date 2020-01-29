@@ -11,7 +11,7 @@
 
 
 ## Links and Resources
-[Pull Request](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/14) <br>
+[Pull Request](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/15) <br>
 [Travis](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms) <br>
 [Jsdocs](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/blob/tree/docs/data-structures_tree_tree.js.html)
 
