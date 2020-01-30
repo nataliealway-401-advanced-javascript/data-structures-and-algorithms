@@ -53,4 +53,39 @@ describe('Find Max Testing', () => {
   });
 });
 
-
+// Tree testing to get coverage higher:
+describe('In-order traversal', () => {
+  const test = new Tree(100);
+  test.add(50);
+  test.add(25);
+  test.add(75);
+  test.add(155);
+  test.add(205);
+  it('Can successfully return a collection from an in-order traversal', () => { 
+    expect(test.inOrder()).toEqual([25, 50, 75, 100, 155, 205]);
+  });
+});
+  
+describe('Pre-Order traversal', () => {
+  const test = new Tree(100);
+  test.add(50);
+  test.add(25);
+  test.add(75);
+  test.add(155);
+  test.add(205);
+  it('Can successfully return a collection from a pre-order traversal', () => {
+    expect(test.preOrder()).toEqual([100, 50, 25, 75, 155, 205]);
+  });
+});
+  
+describe('Post-Order Traversal', () => {
+  const test = new Tree(100);
+  test.add(50);
+  test.add(25);
+  test.add(75);
+  test.add(155);
+  test.add(205);
+  it('Can successfully return a collection from a post-order traversal', () => {
+    expect(test.postOrder()).toEqual([25, 75, 50, 205, 155, 100]);
+  });
+});
