@@ -5,8 +5,8 @@ Insertion sort is a simple sorting algorithm that builds the final sorted array 
 ![pseudoCode](./assets/insertionSort.png)
 
 ## Step Through
-Sample Array: [8,4,23,42,16,15]
-![stepThrough](./assets/insertionSortWB.jpg)
+Sample Array: [8, 4, 23, 42, 16, 15]
+![stepThrough](./assets/insertionsortWB.jpg)
 
 * pass 1: In the first pass of our sample array, we loop through the index starting at 0, and because there is nothing to compare our first value to, it moves to the next position, which is index 1. Our code sees if 4 is smaller than 8, and because it is, it moves positions so that 4 is now at 0, and 8 is shifted to the position of index 1.
 * pass 2: Our for loop continues to index 2, which has a value of 23, and compares itself to index 1, and then 0. Because it is not smaller than those values, it stays put, and the loop continues iterate through our array.
