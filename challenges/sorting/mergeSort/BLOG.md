@@ -18,6 +18,6 @@ Merge sort is a divide-and-conquer algorithm based on the idea of breaking down 
 
 
 ## Solution
-* [code]()
-* [testing]()
+* [code](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/blob/mergeSort/challenges/sorting/mergeSort/mergeSort.js)
+* [testing - Travis CI](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms)
 
