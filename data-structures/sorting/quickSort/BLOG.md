@@ -15,7 +15,7 @@ Like the merge sort algorithm, Quick sort is based on the divide-and-conquer app
 * Worst case: O(n^2)
 
 ## Solution
-[code]()
+[code](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/blob/quickSort/data-structures/sorting/quickSort/quickSort.js)
 
 
 
