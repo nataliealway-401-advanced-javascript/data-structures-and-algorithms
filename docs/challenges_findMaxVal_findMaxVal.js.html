@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: data-structures/tree/tree.js</title>
+    <title>JSDoc: Source: challenges/findMaxVal/findMaxVal.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: data-structures/tree/tree.js</h1>
+    <h1 class="page-title">Source: challenges/findMaxVal/findMaxVal.js</h1>
 
     
 
@@ -27,19 +27,8 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
-/**
- * class Node
- * @class
- */
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-}
 
-module.exports = Node;
+const Node = require('./node.js');
 /**
  * Binary Tree
  * @class
@@ -107,6 +96,28 @@ class BinaryTree {
     };
     traverse(this.root);
     return result;
+  }
+
+
+  /**
+  * @function findMax()
+  * Traverses through tree and compares node values, setting whatevers great to maximum node 
+  **/
+  findMax() {
+    let max = this.root.value;
+    const travserse = node => {
+      if(node.value > max) {
+        max = node.value;
+      }
+      if(node.left) {
+        travserse(node.left);
+      }
+      if(node.right){
+        travserse(node.right);
+      }
+    };
+    travserse(this.root);
+    return max;
   }
 }
   
