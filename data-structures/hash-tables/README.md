@@ -26,9 +26,9 @@ Implement a Hashtable with the following methods:
 * `contains(key)` 
 
 ## Links
-* [submissionPR]()
-* [travis]()
-* [JSdocs]()
+* [submissionPR](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/21)
+* [travis](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms)
+* [JSdocs](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/blob/hashTables/docs/data-structures_hash-tables_hashTable.js.html)
 
 
 ## UML
