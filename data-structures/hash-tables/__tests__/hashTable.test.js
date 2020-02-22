@@ -1,6 +1,6 @@
 'use strict';
 
-const { Hashmap } = require('../hashTable.js');
+const { LinkedList, Hashmap } = require('../hashTable.js');
 let hash = new Hashmap;
 hash.add('thing1', 18);
 hash.add('thing2', 19);
@@ -34,8 +34,22 @@ describe('Hashtable testing', () => {
       expect(result).toBe(20);
     });
     it('Succesfully hash a key to an in-range value', () => {
-      let result = hash.hash('thing3');
-      expect(result).toBe(1);
+      let result = hash.hash('thing4');
+      expect(result).toBe(0);
+    });
+  });
+
+  describe('LinkedList', () => {
+    test('values in linked list works', () => {
+      let list = new LinkedList();
+      list.add('a');
+      list.add('b');
+      list.add('c');
+      list.add('d');
+  
+      let val = list.values();
+  
+      expect(val).toEqual(['a', 'b', 'c', 'd']);
     });
   });
 });
