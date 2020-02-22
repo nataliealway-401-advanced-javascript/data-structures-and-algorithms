@@ -1,3 +1,4 @@
+
 'use strict';
 
 class Node {
@@ -11,78 +12,95 @@ class LinkedList {
   constructor() {
     this.head = null;
   }
-  add(value){
+
+  add(value) {
+    if(!value) throw new Error('Invalid value');
+
     const node = new Node(value);
 
-    //initial case where head is null
-    if( !this.head){
+    if (!this.head) {
       this.head = node;
       return;
     }
 
     let current = this.head;
+
     while(current.next) {
       current = current.next;
     }
+
     current.next = node;
   }
 
-  getKey(key){
-    if(!this.head) return;
+  getKey(key) {
+    if (!this.head) return;
+
     let current = this.head;
-    while(current){
-      if(current.value[0] === key) return current.value[1];
+
+    while (current) {
+      if (current.value[0] === key) return current.value[1]; 
       current = current.next;
     }
+
     return;
   }
 
   values() {
     let values = [];
     let current = this.head;
+
     while(current) {
       values.push(current.value);
       current = current.next;
     }
+
     return values;
   }
-
 }
-
 
 class Hashmap {
   constructor(size) {
-    this.size = size;
-    this.map = new Array(size);
+    this.size = size || 5,
+    this.buckets = new Array(this.size);
   }
 
   hash(key) {
     return key.split('').reduce((p, n) => {
       return p + n.charCodeAt(0);
-    }, 0) * 599 % this.size;
+    },0) * 599 % this.size;
   }
 
-  set(key, value) {
-    let hash = this.hash(key);
-    if(!this.map[hash]) { this.map[hash] = new LinkedList();}
+  add(key, value) {
+    if (!key) throw new Error('Invalid key provided');
+    if (this.contains(key)) return 'Key already being used';
 
-    let entry = { [key] : value };
-    this.map[hash].add(entry);
-  }
-
-  //find a key in the hashmap and return its value
-  get(key){
     let index = this.hash(key);
-    if(!this.map[index]){ return null; }
-    return this.map[index].getKey(key);
+
+    if (!this.buckets[index])  { this.buckets[index] = new LinkedList(); }
+
+    this.buckets[index].add([key, value]);
+  
   }
 
-  contains(key){
+  get(key) {
+    if (!key) throw new Error('Invalid key provided');
+
     let index = this.hash(key);
-    if(!this.map[index]){ return null; }
-    return this.map[index].getKey(key) ? true : false;
+
+    if (!this.buckets[index])  { return null; }
+
+    return this.buckets[index].getKey(key);
   }
 
+  contains(key) {
+    if (!key) throw new Error('Invalid key provided');
+
+    let index = this.hash(key);
+
+    if (!this.buckets[index])  { return null; }
+
+    return this.buckets[index].getKey(key) ? true : false;
+  }
 }
 
-module.exports = { LinkedList, Hashmap };
+module.exports = {LinkedList, Hashmap};
