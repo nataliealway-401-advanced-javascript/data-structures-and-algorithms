@@ -12,9 +12,9 @@ Space: 0(n)*
 ## API
 `repeatedWord(string)`
 ## Links and Resources
-[submissionPR]() <br>
-[Travis]() <br>
-[Docs]() <br>
+[submissionPR](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/22) <br>
+[Travis](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms) <br>
+[Docs](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/blob/repeated-word/docs/challenges_repeatedWord_repeated-word.js.html) <br>
 
 ## Solution
 ![uml](../assets/repeatWordUML.jpg)
