@@ -21,6 +21,7 @@
 * Binary Trees
    * [Binary Tree]()
    * [Find Max Value](link)
+   * [Intersection of Trees](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/tree/tree-intersection/challenges/treeIntersection)
 
 * Sorting
    * [Insertion Sort](link)
