@@ -1,5 +1,9 @@
 'use strict';
-
+/**
+ * @function repeatedWord
+ * @param  {} string
+ * @returns result
+ */
 function repeatedWord(string) {
   const arr = string.split(' ');
   const hash = new Map();
