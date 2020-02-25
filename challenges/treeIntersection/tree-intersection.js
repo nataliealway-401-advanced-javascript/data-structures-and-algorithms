@@ -1,5 +1,10 @@
 'use strict';
-
+/**
+ * @function findValues
+ * @param  {} node
+ * @param  {} allValues
+ * @param  {} intersection
+ */
 const findValues = (node, allValues, intersection) => {
   if(!node) return;
   if(allValues.has(node.value)){
@@ -10,7 +15,12 @@ const findValues = (node, allValues, intersection) => {
   findValues(node.left, allValues, intersection);
   findValues(node.right, allValues, intersection);
 };
-
+/**
+ * @function treeIntersection
+ * @param  {} nodeOne
+ * @param  {} nodeTwo
+ * @returns intersection values
+ */
 const treeIntersection = (nodeOne, nodeTwo) => {
   if(!nodeOne || !nodeTwo) return null;
   let allValues = new Map();
