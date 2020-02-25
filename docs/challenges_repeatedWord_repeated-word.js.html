@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: data-structures/queueWithStacks/stacks.js</title>
+    <title>JSDoc: Source: challenges/repeatedWord/repeated-word.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: data-structures/queueWithStacks/stacks.js</h1>
+    <h1 class="page-title">Source: challenges/repeatedWord/repeated-word.js</h1>
 
     
 
@@ -28,73 +28,28 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 /**
- * Node Class
- * @class
- * @param  {} value
- * @param  {} next
+ * @function repeatedWord
+ * @param  {} string
+ * @returns result
  */
-class Node {
-  constructor(value, next){
-    this.value = value;
-    this.next = null;
-  }
-}
+function repeatedWord(string) {
+  const arr = string.split(' ');
+  const hash = new Map();
+  const result = [];
+  
+  for (let i = 0; i &lt; arr.length; i++) {
+    if (hash.get(arr[i]) === undefined) {
+      hash.set(arr[i].toLowerCase(), true);
+    } else if (hash.get(arr[i]) === true) {
+      result.push(arr[i]);
 
-//_____________ STACKS ________________
-/**
- * Stack 
- * @class
- */
-class Stack {
-  constructor(){
-    this.top = null;
-  }
-
-  /**
-   * Method for adding node on to the top of the stack
-   * @param {*} value 
-   */
-  push(value){
-    let currentNode = new Node(value);
-    currentNode.next = this.top;
-    this.top = currentNode;
-  }
-
-  /**
-   * Method for taking off the top node of the stack
-   * @returns value
-   */
-  pop(){
-    if(this.top !== null){
-      this.temp = this.top;
-      this.top = this.temp.next;
-      return this.temp.data;
-    } else {
-      return 'null';
-    }
-  } 
-
-  /**
-   * Checks the value of the node on top of the stack
-   */
-  peek(){
-    return this.top;
-  }
-
-  /**
-   * Returns true if the stack is empty
-   * @returns boolean
-   */
-  isEmpty() {
-    if (this.top === null){
-      return true;
-    } else {
-      return false;
+    
+      return result;
     }
   }
 }
 
-module.exports = Stack;</code></pre>
+module.exports = repeatedWord;</code></pre>
         </article>
     </section>
 
