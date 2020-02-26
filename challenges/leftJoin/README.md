@@ -5,12 +5,14 @@ Implement a simplified LEFT JOIN for 2 Hashmaps.
 Write a function that LEFT JOINs two hashmaps into a single data structure.
 
 ## Approach & Efficiency
+O(n) - Adding items into an array <br>
+O(1) - Comparing the arrays
 
 
 ## Links and Resources
 [submissionPR]() <br>
-[Travis]() <br>
+[Travis]((https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms) ) <br>
 [Docs]() <br>
 
 ## Solution
-<!-- Embedded whiteboard image -->
+![UML](../assets/leftJoinUML.jpg)
