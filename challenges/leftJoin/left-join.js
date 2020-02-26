@@ -14,7 +14,6 @@ const leftJoin = (hashTable1, hashTable2) => {
         //Get the values in both hash tables from that key
         let ht1Value = hashTable1.get(key); 
         let ht2Value = hashTable2.get(key);
-
         let object = {};
         object[key] = [ht1Value, ht2Value];
         //Push the joined values on to the array
