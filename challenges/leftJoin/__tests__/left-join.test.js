@@ -1,17 +1,43 @@
 'use strict';
 
-const  HashTable  = require('../../../data-structures/hash-tables/hashTable.js');
-const leftJoin = require('../left-join.js');
+const HashTable = require('../../../data-structures/hash-tables/hashTable.js');
+const leftJoin = require('../left-join');
 
-let hash1 = new HashTable(1);
-let hash2 = new HashTable(10);
+describe('Left\'s Join ', () => {
+  let hashTable1 = new HashTable;
+  let hashTable2 = new HashTable;
 
 
+  beforeAll(() => {
 
+    hashTable1.add('fond','enamored');
+    hashTable1.add('wrath','anger');
+    hashTable1.add('deligent', 'employed');
+    hashTable1.add('outfit', 'garb');
+    hashTable1.add('guide', 'usher');
 
-describe('left join testing', () => {
-  it('Hash tables are both empty', () => {
-    let result = leftJoin(hash1, hash2);
-    expect(result).toMatchObject([]);
+    hashTable2.add('fond','averse');
+    hashTable2.add('wrath','delight');
+    hashTable2.add('deligent', 'idle');
+    hashTable2.add('guide', 'follow');
+    hashTable2.add('flow', 'jam');
   });
+
+  it('should populate my hashtable content', () => {
+    let resultLeft = hashTable1.get('fond');
+    let resultRight = hashTable2.get('outfit');
+    expect(resultLeft).toEqual('enamored');
+    expect(resultRight).toBeNull();
+  });
+
+  it('should return the left join of two hashtables', () => {
+    let result = leftJoin(hashTable1, hashTable2);
+
+    expect(result).toStrictEqual( [ [ 'wrath', 'anger', 'delight' ],
+      [ 'deligent', 'employed', 'idle' ],
+      [ 'fond', 'enamored', 'averse' ],
+      [ 'outfit', 'garb', null ],
+      [ 'guide', 'usher', 'follow' ] ]);
+  });
+
 });

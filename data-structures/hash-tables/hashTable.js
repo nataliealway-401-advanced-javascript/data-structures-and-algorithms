@@ -72,71 +72,58 @@ class LinkedList {
 /**
  * @class Hashmap
  */
-class HashTable {
-  /**
-   * @constructor
-   * @param {Number} size - The size of the hashtable array you want to create 
-   */
-  constructor(size){
-    this.size = size;
-    this.array = [];
-    //Making each of the indexes a new linked list
-    for(let i = 0; i < size; i++) this.array[i] = new LinkedList();
+class Hashmap {
+  constructor(size) {
+    this.size = size || 5,
+    this.buckets = new Array(this.size);
   }
   /**
    * @function hash
    * @param  {} key
    * @returns hashed key
    */
-  hash(key){
-    let hash = 1;
-    for(let i = 0; i < key.length -1; i++){
-      hash *= key.charCodeAt(i);
-    }
-    hash = (hash * 599) % this.size;
-    return hash;
+  hash(key) {
+    return key.split('').reduce((p, n) => {
+      return p + n.charCodeAt(0);
+    },0) * 599 % this.size;
   }
-  
+
   /**
    * @function add
    * @param  {} key, value
    */
-  add(key, value){
-    const index = this.hash(key);
-    let data = {};
-    data[key] = value;
-    return this.array[index].insert(data);
+  add(key, value) {
+    if (!key) throw new Error('Invalid key');
+    if (this.contains(key)) return 'This key has already been used';
+    let index = this.hash(key);
+    if (!this.buckets[index])  { this.buckets[index] = new LinkedList(); }
+    this.buckets[index].add([key, value]);
+  
   }
- /**
+
+  /**
    * @function get
    * @param  {} key
    * @returns key
    */
-  get(key){
-    const index = this.hash(key);
-    let bucket = this.array[index].head;
-    while (bucket) {
-      if (bucket.data[key]) return bucket.data[key];
-      bucket = bucket.next;
-    }
-    return null;
+  get(key) {
+    if (!key) throw new Error('Invalid key');
+    let index = this.hash(key);
+    if (!this.buckets[index])  { return null; }
+    return this.buckets[index].getKey(key);
   }
+
   /**
    * @function contains
    * @param  {} key
    * @returns boolean
    */
-  contains(key){
-    const index = this.hash(key);
-    let bucket = this.array[index].head;
-    while(bucket){
-      if(bucket.data[key]) return true;
-      bucket = bucket.next;
-    }
-    return false;
+  contains(key) {
+    if (!key) throw new Error('Invalid key');
+    let index = this.hash(key);
+    if (!this.buckets[index])  { return null; }
+    return this.buckets[index].getKey(key) ? true : false;
   }
-
 }
 
-
-module.exports = HashTable;
+module.exports =  Hashmap;
