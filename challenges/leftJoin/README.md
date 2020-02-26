@@ -11,7 +11,7 @@ O(1) - Comparing the arrays
 
 ## Links and Resources
 [submissionPR](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/24) <br>
-[Travis]((https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms) ) <br>
+[Travis](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms) <br>
 [Docs]() <br>
 
 ## Solution
