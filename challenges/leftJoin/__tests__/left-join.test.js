@@ -1,11 +1,11 @@
 'use strict';
 
-const HashTable = require('../../../data-structures/hash-tables/hashTable.js');
+const { Hashmap } = require('../../../data-structures/hash-tables/hashTable.js');
 const leftJoin = require('../left-join');
 
 describe('Left\'s Join ', () => {
-  let hashTable1 = new HashTable;
-  let hashTable2 = new HashTable;
+  let hashTable1 = new Hashmap;
+  let hashTable2 = new Hashmap;
 
 
   beforeAll(() => {

@@ -126,4 +126,4 @@ class Hashmap {
   }
 }
 
-module.exports =  Hashmap;
+module.exports =  {LinkedList, Hashmap};
