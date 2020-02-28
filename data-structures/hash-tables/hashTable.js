@@ -1,4 +1,3 @@
-
 'use strict';
 /**
  * @class Node
@@ -127,4 +126,4 @@ class Hashmap {
   }
 }
 
-module.exports = {LinkedList, Hashmap};
+module.exports =  {LinkedList, Hashmap};
