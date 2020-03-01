@@ -1,10 +1,10 @@
-# Summary and name of challenge
+# Graphs
 A Graph is a non-linear data structure and consists of a finite set of vertices(or nodes) and set of Edges which connect a pair of nodes.
 
 ## Links
-[Submission PR]() <br>
-[Travis CI]()<br>
-[Docs]()
+[Submission PR](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/25) <br>
+[Travis CI](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms)<br>
+[Docs](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/blob/graph/docs/Graph.html)
 
 ## Challenge
 Implement your own Graph. The graph should be represented as an adjacency list, and should include the following methods:
