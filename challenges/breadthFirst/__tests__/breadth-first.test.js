@@ -99,7 +99,7 @@ describe('Graph Breadth First', () => {
     graph.addEdge(vertex3, vertex4);
   });
   
-  it('Returns values in graph in BFS', () => {
+  it('Returns the values in the set', () => {
     let set = [
       { value: 1 },
       { value: 2 },
@@ -109,13 +109,13 @@ describe('Graph Breadth First', () => {
     expect(graph.breadthFirst(firstNode)).toEqual(set);
   });
   
-  it('Returns error on invalid start node', () => {
+  it('Returns error when given an invalid starting node', () => {
     expect(graph.breadthFirst('test')).toEqual('Invalid Node');
   });
   
-  it('Returns error on invalid start node', () => {
-    const graphTwo = new Graph();
-    expect(graphTwo.breadthFirst(firstNode)).toEqual('Graph is empty');
+  it('Returns error on invalid starting node', () => {
+    const graph2 = new Graph();
+    expect(graph2.breadthFirst(firstNode)).toEqual('Graph is empty');
   });
   
 });
