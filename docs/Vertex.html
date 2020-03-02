@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: challenges/02-ArrayShift/array-shift.js</title>
+    <title>JSDoc: Class: Vertex</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,43 +17,133 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: challenges/02-ArrayShift/array-shift.js</h1>
+    <h1 class="page-title">Class: Vertex</h1>
 
     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>/**
- * Function that takes a value and inserts it into the center of an array
- * @param  {} arr
- * @param  {} value
- */
-function shiftArray(arr,value) {
-  let newArray = [];
-  let middle = arr.length/2;
-  let counter = 0;
-   
-  if (arr.length % 2 === 1) {
-    middle += .5;
-  }
-   
-  for (let i = 0; i &lt;= arr.length; i++) {
-    if (i !== middle) {
-      newArray[i] = arr[ i + counter];
-    } else {
-      newArray[i] = value;
-      counter--;
-    }
-  }
-  return newArray;
-}
-  
-module.exports = shiftArray;</code></pre>
-        </article>
-    </section>
+        <h2><span class="attribs"><span class="type-signature"></span></span>Vertex<span class="signature">()</span><span class="type-signature"></span></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+
+    
+    <h4 class="name" id="Vertex"><span class="type-signature"></span>new Vertex<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data-structures_graph_graph.js.html">data-structures/graph/graph.js</a>, <a href="data-structures_graph_graph.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
