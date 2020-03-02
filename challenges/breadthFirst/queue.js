@@ -1,9 +1,5 @@
 'use strict';
 
-/**
- * Node Class
- * @class
- */
 class Node {
   constructor(value, next) {
     this.value = value;
@@ -11,28 +7,19 @@ class Node {
   }
 }
 
-/**
- * Stack Class
- * @class
- */
+
 class Stack {
   constructor() {
     this.top = null;
   }
 
-  /**
-   * Pushes node on to the top of the stack
-   * @param {*} value 
-   */
   push(value) {
     let newNode = new Node(value);
     newNode.next = this.top;
     this.top = newNode;
   }
 
-  /**
-   * Removes the top node on the stack
-   */
+
   pop() {
     let temp;
 
@@ -43,16 +30,12 @@ class Stack {
     return temp;
   }
 
-  /**
-   * Return the top node on the stack
-   */
+
   peek() {
     return this.top;
   }
 
-  /**
-   * Return true if stack is empty
-   */
+ 
   isEmpty() {
     let top = this.top;
 
@@ -63,10 +46,7 @@ class Stack {
 
 }
 
-/**
- * Queue Stack
- * @class
- */
+
 class Queue {
   constructor() {
     this.rear = null;
@@ -74,10 +54,7 @@ class Queue {
     this.length = 0;
   }
 
-  /**
-   * Adds a node to the end of the queue
-   * @param {*} value 
-   */
+
   enqueue(value) {
     let newNode = new Node(value);
 
@@ -91,9 +68,7 @@ class Queue {
     this.length++;
   }
 
-  /**
-   * Removes the node at the front of the queue
-   */
+ 
   dequeue() {
     let temp;
     let hold = this.front;
@@ -105,16 +80,11 @@ class Queue {
     return hold.value;
   }
 
-  /**
-   * Return the node at the front of the queue
-   */
+ 
   peek() {
     return this.front;
   }
 
-  /**
-   * Returns boolean depending on queue being empty
-   */
   isEmpty() {
     let front = this.front;
 
