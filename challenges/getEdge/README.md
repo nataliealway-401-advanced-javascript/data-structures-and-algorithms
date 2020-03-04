@@ -5,9 +5,9 @@ Write a function based on the specifications above, which takes in a graph, and 
 ## Approach & Efficiency
 getEdge -> 0(n^2)
 ## Links and Resources
-[Submission PR]() <br>
-[Travis Ci]() <br>
-[Docs]()
+[Submission PR](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/pull/27) <br>
+[Travis Ci](https://www.travis-ci.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms) <br>
+[Docs](https://github.com/nataliealway-401-advanced-javascript/data-structures-and-algorithms/blob/get-edges/docs/Edge.html)
 
 ### Solution:
 ![UML](../assets/getEdgeUML.jpg)
