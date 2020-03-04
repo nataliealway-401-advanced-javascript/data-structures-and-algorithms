@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: challenges/repeatedWord/repeated-word.js</title>
+    <title>JSDoc: Source: challenges/depthFirst/depth-first.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: challenges/repeatedWord/repeated-word.js</h1>
+    <h1 class="page-title">Source: challenges/depthFirst/depth-first.js</h1>
 
     
 
@@ -27,29 +27,42 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
-/**
- * @function repeatedWord
- * @param  {} string
- * @returns result
- */
-function repeatedWord(string) {
-  const arr = string.split(' ');
-  const hash = new Map();
-  const result = [];
-  
-  for (let i = 0; i &lt; arr.length; i++) {
-    if (hash.get(arr[i]) === undefined) {
-      hash.set(arr[i].toLowerCase(), true);
-    } else if (hash.get(arr[i]) === true) {
-      result.push(arr[i]);
 
-    
-      return result;
+/**
+ * @function depthFirst
+ * @param {*} graph 
+ */
+function depthFirst(graph) {
+
+  const visited = new Set();
+  let stack = [];
+  let result = [];
+  let array = graph.getNodes();
+  let startVertex = array[0];
+  
+  stack.push(startVertex);
+  visited.add(startVertex);
+
+
+  while(stack.length){
+    let current = stack.pop();
+    result.push(current);
+    let neighbors = graph.getNeighbors(current);
+    for(let edge of neighbors){
+      let neighborVertex = edge.vertex;
+      if(visited.has(neighborVertex)){
+        continue;
+      }else{
+        visited.add(neighborVertex);
+      }
+      stack.push(neighborVertex);
     }
   }
+  return result;
 }
 
-module.exports = repeatedWord;</code></pre>
+module.exports = depthFirst;
+</code></pre>
         </article>
     </section>
 
