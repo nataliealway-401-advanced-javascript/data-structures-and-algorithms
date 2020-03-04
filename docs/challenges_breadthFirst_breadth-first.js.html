@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: challenges/findMaxVal/findMaxVal.js</title>
+    <title>JSDoc: Source: challenges/breadthFirst/breadth-first.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: challenges/findMaxVal/findMaxVal.js</h1>
+    <h1 class="page-title">Source: challenges/breadthFirst/breadth-first.js</h1>
 
     
 
@@ -27,171 +27,151 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
+const {Queue} = require('./queue.js');
 
-const Node = require('./node.js');
 /**
- * Binary Tree
- * @class
+ * @class Vertex
  */
-class BinaryTree {
-  constructor(root){
-    this.root = new Node(root);
-  }
-  
-  /**
-   * Preorder prints(logs) root&lt;-left&lt;-right 
-   * @param  {} print
-   */
-  preOrder(){
-    let result = [];
-    const traverse = node => {
-      result.push(node.value);
-      if(node.left){
-        traverse(node.left);
-      }
-      if(node.right){
-        traverse(node.right);
-      }
-    };
-    traverse(this.root);
-    return result;
-  }
-  
-  /**
-   * Postorder prints(logs) left&lt;-right&lt;-root 
-   * @param  {} print
-   */
-
-  postOrder() {
-    let result = [];
-    const traverse = node => {
-      if(node.left){
-        traverse(node.left);
-      }
-      if(node.right){
-        traverse(node.right);
-      }
-      result.push(node.value);
-    };
-    traverse(this.root);
-    return result;
-  }
-  
-  
-  
-  /**
-   * inOrder prints(logs) left&lt;-root&lt;-right
-   * @param  {} print
-   */
-  inOrder(print) {
-    let result = [];
-    const traverse = node => {
-      if(node.left){
-        traverse(node.left);
-      }
-      result.push(node.value);
-      if(node.right){
-        traverse(node.right);
-      }
-    };
-    traverse(this.root);
-    return result;
-  }
-
-
-  /**
-  * @function findMax()
-  * Traverses through tree and compares node values, setting whatevers great to maximum node 
-  **/
-  findMax() {
-    let max = this.root.value;
-    const travserse = node => {
-      if(node.value > max) {
-        max = node.value;
-      }
-      if(node.left) {
-        travserse(node.left);
-      }
-      if(node.right){
-        travserse(node.right);
-      }
-    };
-    travserse(this.root);
-    return max;
+class Vertex {
+  constructor(value){
+    this.value = value;
   }
 }
-  
 
-
-class BinarySearchTree extends BinaryTree {
-  
-  /**
-   * Add traverses the tree and adds a node based on if it's value
-   * @function add
-   * @param {*} value 
-   */
-  add(value) {
-    let root = this.root;
-    
-    if(!root){
-      this.root = new Node(value);
-      return;
-    }
-    else {
-      const search = (node) => {
-        if(value &lt; node.value) {
-          if(!node.left){
-            node.left = new Node(value);
-            return;
-          }
-          else {
-            return search(node.left);
-          }
-        }
-        else if(value > node.value) {
-          if(!node.right){
-            node.right = new Node(value);
-            return;
-          }
-          else{
-            return search(node.right);
-          }
-        }
-      };
-    
-      return search(root);
-    }
+/**
+ * @class Edge
+ */
+class Edge {
+  constructor(vertex, weight){
+    this.vertex = vertex;
+    this.weight = weight || 0;
   }
-    
+}
+
+/**
+ * @class Graph
+ */
+class Graph {
+  constructor(){
+    this.adjacencyList = new Map();
+  }
+
   /**
-   * Contains checks the tree for a value and returns a Boolean
-   * @function contains
+   * Adds a new node value to the vertex
    * @param {*} value 
    */
-  contains(value) {
-    let currentNode = this.root;
-    
-    while(currentNode){
-      if(value === currentNode.value){
-        return true;
-      }
-      if(value &lt; currentNode.value) {
-        currentNode = currentNode.left;
-      }
-      else if(value > currentNode.value){
-        currentNode = currentNode.right;
+  addValue(value){
+    this.addNode(new Vertex(value));
+  }
+
+  /**
+   * Adds a vertex to the adjacency list
+   * @param {vertex}
+   */
+  addNode(vertex){
+    this.adjacencyList.set(vertex, []);
+  }
+
+  /**
+   * @function addEdge - adds edges between the start and end vertex
+   * @param {*} startVertex 
+   * @param {*} endVertex 
+   * @param {*} weight 
+   */
+  addEdge(startVertex, endVertex, weight = 0){
+    if(!this.adjacencyList.has(startVertex) || !this.adjacencyList.has(endVertex)){
+      throw new Error('ERROR: Invalid Vertices');
+    }
+
+    const adjacencies = this.adjacencyList.get(startVertex);
+    adjacencies.push(new Edge(endVertex, weight));
+  }
+
+  /**
+   * Retrieves neighbors of the given vertex
+   * @function getNeighbors
+   * @param {*} vertex 
+   */
+  getNeighbors(vertex){
+    if(!this.adjacencyList.has(vertex)){
+      throw new Error('Error: Invalid vertex', vertex);
+    }
+
+    return [...this.adjacencyList.get(vertex)];
+  }
+
+  /**
+   * Returns values of the graph
+   * @function getValues
+   * @returns {Array} result
+   */
+  getValues(){
+    let result = [];
+    let nodes = [ ...this.adjacencyList.keys() ];
+    nodes.map(key => {
+      key = key.value;
+      result.push(key);
+    });
+    return result;
+  }
+
+  /**
+   * Retrieves key value pairs of adjacencyList
+   * @function getNodes
+   * @returns {Array} nodes
+   */
+  getNodes(){
+    let nodes = [ ...this.adjacencyList.keys() ];
+    return nodes;
+  }
+
+  /**
+   * Returns the total size of the adjacencyList
+   * @function size
+   * @returns size of adjacency list
+   */
+  size(){
+    return this.adjacencyList.size;
+  }
+
+  breadthFirst(firstNode){
+    //credit Trevor Thompson
+    if (typeof firstNode !== 'object') return 'Invalid Node';
+    if (this.size() === 0) return 'Graph is empty';
+
+    let visitedNodes = new Set();
+    let queue = new Queue();
+    let results = [];
+
+    queue.enqueue(firstNode);
+    visitedNodes.add(firstNode);
+
+    while(queue.length){
+      let dequeue = queue.dequeue();
+
+      results.push(dequeue);
+      visitedNodes.add(dequeue);
+
+      const neighbors = this.getNeighbors(dequeue);
+
+      for(let k of neighbors){
+        let neighbor = k.vertex;
+
+        if(visitedNodes.has(neighbor)){
+          continue;
+        }else{
+          visitedNodes.add(neighbor);
+        }
+
+        queue.enqueue(neighbor);
       }
     }
-    
-    return false;
-  }    
+    return results;
+  }
 }
 
 
-
-
-
-module.exports = BinarySearchTree;</code></pre>
+module.exports = {Vertex, Edge, Graph};</code></pre>
         </article>
     </section>
 
